@@ -5,14 +5,14 @@
 
 #include <map>
 
-#define WIFI_SSID         "Rkg"    
-#define WIFI_PASS         "ritesh2801"
-#define APP_KEY           "a91f73a9-4b41-4f68-95f6-72fd0fce5c63"      
-#define APP_SECRET        "8f01f3c9-b7be-4b69-87fc-c4304cf97f23-46fc777c-b60b-488d-a8a9-0fbafe17eec3"   
+#define WIFI_SSID      //Enter WIfI Username       
+#define WIFI_PASS      //Enter WIfI Password   
+#define APP_KEY        //Enter Sinric Pro App Key       
+#define APP_SECRET     //Enter Sinric Pro App Secret      
 
 
-#define device_ID_1   "62487e11753dc5aab4a083cd"
-#define device_ID_2   "62487dd6d0fd258c5207e41a"
+#define device_ID_1   //Enter DeviceId 
+#define device_ID_2   //Enter DeviceId 
 
 
 
