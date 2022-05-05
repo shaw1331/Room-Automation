@@ -1,8 +1,8 @@
-                           Indian Institute Technology Roorkee,India
+                             Indian Institute Technology Roorkee,India
                                                                    
-                 Artificial Intelligence and Electronics Society II year Project
+                   Artificial Intelligence and Electronics Society II year Project
                                                             
-                                 Project Mentor :-Manav Saraf
+                                  Project Mentor :-Manav Saraf
                                                                              
                                          Team Member
                                                              
@@ -33,4 +33,4 @@
 * Login here with the Sinric pro credential. 
 * In the dashboard tab, all the devices will be present. So you can able to control the state of the devices by clicking on the Turn on and Turn off button on the website.
                               
-                                                                          **Thanks**
+                                   **Thanks**
