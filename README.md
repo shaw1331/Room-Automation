@@ -1,19 +1,19 @@
-                                              Indian Institute Technology Roorkee,India
+                           Indian Institute Technology Roorkee,India
                                                                    
-                                  Artificial Intelligence and Electronics Society II year Project
+                 Artificial Intelligence and Electronics Society II year Project
                                                             
-                                                     Project Mentor :-Manav Saraf
+                                 Project Mentor :-Manav Saraf
                                                                              
-                                                             Team Member
+                                         Team Member
                                                              
-                                           1) Ritesh Kumar Gupta (Electrical Engineering)
-                                           2) Mohit              (Mechanical Engineering)
-                                           3) Shub Balodi        (Electronics and Communications Engineering)
-                                           4) Saurabh Singh      (Electrical Engineering)
+                         1) Ritesh Kumar Gupta (Electrical Engineering)
+                         2) Mohit              (Mechanical Engineering)
+                         3) Shub Balodi        (Electronics and Communications Engineering)
+                         4) Saurabh Singh      (Electrical Engineering)
                                                                              
                                                                              
                                                                              
-                                                     **Steps to Automate the Room**
+                                **Steps to Automate the Room**
                                                                              
                                                                              
                                            
