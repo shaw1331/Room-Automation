@@ -8,7 +8,7 @@
                                                              
                          1) Ritesh Kumar Gupta (Electrical Engineering)
                          2) Mohit              (Mechanical Engineering)
-                         3) Shub Balodi        (Electronics and Communications Engineering)
+                         3) Shubh Balodi        (Electronics and Communications Engineering)
                          4) Saurabh Singh      (Electrical Engineering)
                                                                              
                                                                              
