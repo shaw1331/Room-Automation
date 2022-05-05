@@ -2,13 +2,16 @@ import React, { useContext } from "react";
 import classes from "./Device.module.css";
 import AuthContext from "../../store/auth-context";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 function Device(props) {
   var online = props.isOnline;
+
   const [status, setStatus] = React.useState(props.state);
   const authCtx = useContext(AuthContext);
 
   function handleClick(event) {
+    props.getData();
     let Url;
     const token = authCtx.token;
     const value = event.target.value;
@@ -39,11 +42,24 @@ function Device(props) {
         if (response.status === 200) {
           const message = "Turned " + value + " device.";
 
-          alert(message);
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: [message],
+            showConfirmButton: false,
+            timer: 1500,
+          });
         }
       });
     } else {
-      alert("Devices are offline");
+      //alert("Devices are offline");
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Devices are offline",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     }
   }
 
@@ -51,17 +67,28 @@ function Device(props) {
     <div className={classes.dev}>
       <img src="/image/device.jpg" alt="device"></img>
       <h1>{props.title}</h1>
-      {status === "On" ? (
-        <p style={{ color: "green" }}>Switch is On</p>
-      ) : (
-        <p style={{ color: "red" }}>Switch is Off</p>
-      )}
+      <div className={classes.divSpan}>
+        {status === "On" ? (
+          <span style={{ color: "white", backgroundColor: "green" }}>
+            Switch is On
+          </span>
+        ) : (
+          <span style={{ color: "white", backgroundColor: "red" }}>
+            Switch is Off
+          </span>
+        )}
 
-      {online ? (
-        <p style={{ color: "green" }}>Device is Online</p>
-      ) : (
-        <p style={{ color: "red" }}>Device is Offline</p>
-      )}
+        {online ? (
+          <span style={{ color: "white", backgroundColor: "green" }}>
+            Device is Online
+          </span>
+        ) : (
+          <span style={{ color: "white", backgroundColor: "red" }}>
+            Device is Offline
+          </span>
+        )}
+      </div>
+
       <p>Device Id : {props.id}</p>
       <div className={classes.devBtn}>
         <button value="On" name={props.id} onClick={handleClick}>

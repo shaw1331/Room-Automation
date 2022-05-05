@@ -2,6 +2,10 @@ import { useState, useRef, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../../store/auth-context";
 import axios from "axios";
+import Swal from "sweetalert2";
+import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+
 import MailLockIcon from "@mui/icons-material/MailLock";
 import KeyIcon from "@mui/icons-material/Key";
 
@@ -14,11 +18,18 @@ const AuthForm = () => {
   const authCtx = useContext(AuthContext);
 
   const [isLogin, setIsLogin] = useState(true);
+  const [eye, setEye] = useState(true);
 
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
   };
 
+  function handleEyeClick() {
+    setEye(false);
+  }
+  function handleEyeOffClick() {
+    setEye(true);
+  }
   function submitHandler(event) {
     event.preventDefault();
 
@@ -43,16 +54,24 @@ const AuthForm = () => {
         form: {
           client_id: "android-app",
         },
-      }).then(function (response) {
-        const Data = response.data;
-        console.log(Data);
-        const expirationTime = new Date(
-          new Date().getTime() + +Data.expiresIn * 1000
-        );
-        console.log(expirationTime);
-        authCtx.login(Data.accessToken, expirationTime);
-        history.replace("/");
-      });
+      })
+        .then(function (response) {
+          const Data = response.data;
+
+          const expirationTime = new Date(
+            new Date().getTime() + +Data.expiresIn * 10
+          );
+          authCtx.login(Data.accessToken, expirationTime);
+          history.replace("/");
+        })
+        .catch(function (error) {
+          // handle error
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Wrong Email or Password.",
+          });
+        });
     } else {
       Url = "https://api.sinric.pro/api/v1/auth";
       axios({
@@ -65,16 +84,24 @@ const AuthForm = () => {
         form: {
           client_id: "android-app",
         },
-      }).then(function (response) {
-        const Data = response.data;
-        console.log(Data);
-        const expirationTime = new Date(
-          new Date().getTime() + +Data.expiresIn * 1000
-        );
-        console.log(expirationTime);
-        authCtx.login(Data.accessToken, expirationTime);
-        history.replace("/");
-      });
+      })
+        .then(function (response) {
+          const Data = response.data;
+          console.log(Data);
+          const expirationTime = new Date(
+            new Date().getTime() + +Data.expiresIn * 10
+          );
+          authCtx.login(Data.accessToken, expirationTime);
+          history.replace("/");
+        })
+        .catch(function (error) {
+          // handle error
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Wrong Email or Api key.",
+          });
+        });
     }
   }
 
@@ -100,12 +127,25 @@ const AuthForm = () => {
           <div className={classes.divIcon}>
             <KeyIcon className={classes.icon} sx={{ fontSize: 40 }} />
             <input
-              type="password"
+              type={eye ? "password" : "text"}
               id="password"
               required
               ref={passwordInputRef}
             />
           </div>
+          {eye ? (
+            <RemoveRedEyeIcon
+              onClick={handleEyeClick}
+              className={classes.eye}
+              sx={{ fontSize: 30 }}
+            />
+          ) : (
+            <VisibilityOffIcon
+              onClick={handleEyeOffClick}
+              className={classes.eye}
+              sx={{ fontSize: 30 }}
+            />
+          )}
         </div>
         <div className={classes.actions}>
           <button>Login</button>

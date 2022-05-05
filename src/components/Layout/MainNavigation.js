@@ -15,10 +15,19 @@ const MainNavigation = () => {
   return (
     <header className={classes.header}>
       <Link to="/">
-        <div className={classes.logo}>Room Automation</div>
+        <div className={classes.logo}>
+          <img className={classes.Img} src="/image/logo3.png" alt="logo"></img>
+          Room Automation
+        </div>
       </Link>
       <nav>
         <ul>
+          <li>
+            <button>
+              <Link to="/">Home</Link>
+            </button>
+          </li>
+
           {!isLoggedIn && (
             <li>
               <button>

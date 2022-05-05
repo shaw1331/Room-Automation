@@ -1,8 +1,17 @@
 .starting {
-  margin: 3rem auto;
   text-align: center;
+  padding: 20em;
+  background-image: url(/src/images/IITR.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: top;
 }
 
 .starting h1 {
   font-size: 5rem;
+  color: white;
+  text-align: center;
+  position: relative;
+  top: 10px;
+  width: 100%;
 }

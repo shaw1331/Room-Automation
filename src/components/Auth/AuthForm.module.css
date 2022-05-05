@@ -60,11 +60,14 @@
   border: 1px solid #313cae;
   border-radius: 4px;
   padding: 0.5rem 2.5rem;
+  margin: 5px 0 10px 0;
+  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
 }
 
 .actions button:hover {
   background-color: #3f34e2;
   border-color: #873abb;
+  box-shadow: 0 5px 4px rgba(255, 255, 255, 0.5);
 }
 
 .actions .toggle {
@@ -89,4 +92,10 @@
 .icon {
   background-color: #31c1e9;
   font-size: medium;
+}
+.eye {
+  position: relative;
+  left: 165px;
+  /* top: -35px; */
+  bottom: 35px;
 }

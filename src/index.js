@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { AuthContextProvider } from "./store/auth-context";

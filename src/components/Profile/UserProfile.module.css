@@ -9,3 +9,7 @@
   font-size: 3rem;
   font-family: "Libre Baskerville", serif;
 }
+button:hover {
+  background-color: #619feb;
+  color: #38015c;
+}
