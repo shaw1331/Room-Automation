@@ -60,25 +60,25 @@ void setupRelays() {
 }
 
 void setupFlipSwitches() {
-  for (auto &device : devices)  {                     // for each device (relay / flipSwitch combination)
-    flipSwitchConfig_t flipSwitchConfig;              // create a new flipSwitch configuration
+  for (auto &device : devices)  {                     
+    flipSwitchConfig_t flipSwitchConfig;              
 
-    flipSwitchConfig.deviceId = device.first;         // set the deviceId
-    flipSwitchConfig.lastFlipSwitchChange = 0;        // set debounce time
-    flipSwitchConfig.lastFlipSwitchState = true;     // set lastFlipSwitchState to false (LOW)--
+    flipSwitchConfig.deviceId = device.first;         
+    flipSwitchConfig.lastFlipSwitchChange = 0;        
+    flipSwitchConfig.lastFlipSwitchState = true;     
 
-    int flipSwitchPIN = device.second.flipSwitchPIN;  // get the flipSwitchPIN
+    int flipSwitchPIN = device.second.flipSwitchPIN;  
 
-    flipSwitches[flipSwitchPIN] = flipSwitchConfig;   // save the flipSwitch config to flipSwitches map
-    pinMode(flipSwitchPIN, INPUT_PULLUP);                   // set the flipSwitch pin to INPUT
+    flipSwitches[flipSwitchPIN] = flipSwitchConfig;   
+    pinMode(flipSwitchPIN, INPUT_PULLUP);                   
   }
 }
 
 bool onPowerState(String deviceId, bool &state)
 {
   Serial.printf("%s: %s\r\n", deviceId.c_str(), state ? "on" : "off");
-  int relayPIN = devices[deviceId].relayPIN; // get the relay pin for corresponding device
-  digitalWrite(relayPIN, !state);             // set the new relay state
+  int relayPIN = devices[deviceId].relayPIN; 
+  digitalWrite(relayPIN, !state);             
   return true;
 }
 
